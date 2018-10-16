@@ -29,7 +29,7 @@ class App extends Component {
     const sushiID = parseInt(e.target.parentElement.parentElement.dataset.id)
     let newSushis = [...this.state.sushis]
     let sushi = newSushis[sushiID - 1]
-    if (this.state.money >= sushi.price){
+    if (sushi && this.state.money >= sushi.price){
       newSushis[sushiID - 1]["eaten"] = true;
       let newEatenSushis = [...this.state.eatenSushis]
       newEatenSushis.push(sushi)
